@@ -5,6 +5,11 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 
+
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
+
 class_names = [
     'T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
     'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot'
@@ -21,14 +26,14 @@ if uploaded_file is not None:
     model_choice = st.selectbox('Choose a model', ["CNN", "VGG16"])
 
     if model_choice == "CNN":
-        model_path = 'models/network_1.keras'
+        model_path = 'models/fashion_mnist_cnn_model.h5'
 
         resized_image = ImageOps.grayscale(image)
         resized_image = resized_image.resize((28, 28))
         input_array = np.array(resized_image) / 255.0
         input_array = np.expand_dims(input_array, axis=(0, -1))
     else:
-        model_path = 'models/network_2.keras'
+        model_path = 'models/vgg16_fashion_mnist_fine_tuned.h5'
 
         resized_image = image.resize((32, 32))
         input_array = np.array(resized_image) / 255.0
