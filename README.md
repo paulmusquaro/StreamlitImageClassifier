@@ -146,3 +146,10 @@ The `Dockerfile` is based on `python:3.9-slim` to minimize the image size. The `
 - **Error loading models**: Ensure the model files exist in the `models/` directory and match the filenames in `main.py`.
 - **TensorFlow compatibility issues**: Verify that the TensorFlow version in `requirements.txt` is compatible with your Python environment.
 
+---
+
+## Deployed Version
+
+You can explore the live version of the app at the following link: [App Link](https://appimageclassifier-jx8zicdtj2rmeprkwhj4tf.streamlit.app/)
+
+This app demonstrates real-time image classification functionality. To use, simply upload an image and get the classification result.
